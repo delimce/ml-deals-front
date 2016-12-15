@@ -1,5 +1,5 @@
 # ml-deals-front
 MercadoLibre dashboard for marketing deals
 
-this site was build with Angular Material Dashboard
+mercadolibre dashboard for marketing deals build with Material Design Angular Admin Dashboard
 https://github.com/flatlogic/angular-material-dashboard
