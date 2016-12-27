@@ -1,18 +1,41 @@
+<div ng-controller="dealsChartController as vm">
+
+    <md-card>
+        <md-card-header>
+            <h2>Grafica de Successful Items</h2>
+        </md-card-header>
+
+        <md-card-content>
+            <canvas id="bar" class="chart chart-bar"
+                    chart-data="si" chart-labels="labels" chart-series="series">
+            </canvas>
+        </md-card-content>
+    </md-card>
 
 
-<div layout-gt-md="row">
-  <panel-widget flex title="Grafica de Sucessful Items" template="app/views/charts/deals-si.html" class="fixed-height-widget"></panel-widget>
+    <md-card>
+        <md-card-header>
+            <h2>Grafica de GMV</h2>
+        </md-card-header>
+
+        <md-card-content>
+            <canvas id="bar" class="chart chart-bar"
+                    chart-data="gmv" chart-labels="labels" chart-series="series">
+            </canvas>
+        </md-card-content>
+    </md-card>
+
+
+
 </div>
 
 <div layout-gt-md="row">
-  <panel-widget flex title="Grafica de GMV" template="app/views/charts/deals-gmv.html" class="fixed-height-widget"></panel-widget>
-</div>
-
-
-<div layout-gt-md="row">
-  <panel-widget flex title="Site visitors" template="app/views/partials/visitors.html" class="fixed-height-widget"></panel-widget>
-  <panel-widget flex title="Warnings" template="app/views/partials/warnings.html" class="fixed-height-widget"></panel-widget>
-  <panel-widget flex title="Memory load" template="app/views/partials/memory.html" class="fixed-height-widget"></panel-widget>
+    <panel-widget flex title="Site visitors" template="app/views/partials/visitors.html"
+                  class="fixed-height-widget"></panel-widget>
+    <panel-widget flex title="Warnings" template="app/views/partials/warnings.html"
+                  class="fixed-height-widget"></panel-widget>
+    <panel-widget flex title="Memory load" template="app/views/partials/memory.html"
+                  class="fixed-height-widget"></panel-widget>
 </div>
 
 <!--

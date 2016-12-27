@@ -1,0 +1,9 @@
+
+md-card-header{
+    margin-left: 20px;
+}
+
+md-card-header h2{
+    font-size: 14px;
+    font-weight: bold;
+}
