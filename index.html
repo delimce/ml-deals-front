@@ -2,7 +2,7 @@
 <html class="no-js" ng-app="angularMaterialAdmin">
   <head>
     <meta charset="utf-8">
-    <title>Angular Material Dashboard</title>
+    <title>ML deals Dashboard</title>
     <meta name="description" content="Angular admin dashboard with material design">
     <meta name="author" content="flatlogic.com">
     <meta name="viewport" content="width=device-width">
@@ -52,10 +52,11 @@
     <script src="libs/angular-messages/angular-messages.js"></script>
     <script src="libs/angular-material/angular-material.js"></script>
     <script src="libs/angular-mocks/angular-mocks.js"></script>
+    <script src="libs/underscore/underscore-min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+    <!-- services and directives -->
     <!-- inject:js -->
     <script src="app/app.js"></script>
     <script src="app/components/services/TodoListService.js"></script>
@@ -64,8 +65,12 @@
     <script src="app/components/services/NavService.js"></script>
     <script src="app/components/services/MessagesService.js"></script>
     <script src="app/components/services/CountriesService.js"></script>
+    <script src="app/components/services/ChartsService.js"></script>
+
     <script src="app/components/directives/panelWidget.js"></script>
     <script src="app/components/directives/messagesSection.js"></script>
+
+    <!--controllers-->
     <script src="app/controllers/WarningsController.js"></script>
     <script src="app/controllers/VisitorsController.js"></script>
     <script src="app/controllers/UsageController.js"></script>
@@ -80,7 +85,7 @@
     <script src="app/controllers/ControlPanelController.js"></script>
     <script src="app/controllers/dealsChartController.js"></script>
     <script src="app/index.js"></script>
-    <!-- endinject -->
+    <!--controllers-->
 
     <!-- inject:partials -->
     <!-- angular templates will be automatically converted in js and inserted here -->
