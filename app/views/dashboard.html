@@ -1,42 +1,43 @@
 <div ng-controller="dealsChartController as vm">
 
-    <md-card>
-        <md-card-header>
-            <h2>Grafica de Successful Items</h2>
-        </md-card-header>
 
-        <md-card-content>
+<div layout-gt-md="row">
+    <div style="width: 80%">
+        <div style="text-align: center">
+            <h2>Successful Items</h2>
+        </div>
+
+        <div>
             <canvas id="bar" class="chart chart-bar"
                     chart-data="si" chart-labels="labels" chart-series="series">
             </canvas>
-        </md-card-content>
-    </md-card>
+        </div>
+    </div>
 
 
-    <md-card>
-        <md-card-header>
-            <h2>Grafica de GMV</h2>
-        </md-card-header>
+    <div style="width: 80%">
+        <div style="text-align: center">
+            <h2>GMV</h2>
+        </div>
 
-        <md-card-content>
+        <div>
             <canvas id="bar" class="chart chart-bar"
                     chart-data="gmv" chart-labels="labels" chart-series="series">
             </canvas>
-        </md-card-content>
-    </md-card>
-
+        </div>
+    </div>
 
 
 </div>
 
-<div layout-gt-md="row">
+<!--<div layout-gt-md="row">
     <panel-widget flex title="Site visitors" template="app/views/partials/visitors.html"
                   class="fixed-height-widget"></panel-widget>
     <panel-widget flex title="Warnings" template="app/views/partials/warnings.html"
                   class="fixed-height-widget"></panel-widget>
     <panel-widget flex title="Memory load" template="app/views/partials/memory.html"
                   class="fixed-height-widget"></panel-widget>
-</div>
+</div>-->
 
 <!--
 <div layout-gt-md="row">

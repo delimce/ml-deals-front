@@ -1,4 +1,4 @@
-<md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left"
+<!--<md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left"
             class="md-whiteframe-z2 md-sidenav-left">
     <md-toolbar md-theme="custom" class="md-hue-1 md-whiteframe-z2">
         <img src="assets/images/ml-logo.png" style="width: 184px; height: 55px; margin: auto">
@@ -19,7 +19,7 @@
             Actions
         </div>
     </md-button>
-</md-sidenav>
+</md-sidenav>-->
 
 <div layout="column" flex>
     <md-toolbar layout="row" layout-align="center center">
@@ -61,8 +61,8 @@
                     <md-menu-item>
                         <md-button ng-click="$mdCloseMenu()" ui-sref="home.profile">Profile</md-button>
                     </md-menu-item>
-                    <md-menu-item>
-                        <md-button ng-click="$mdCloseMenu()" ui-sref="home.dashboard">Log out</md-button>
+                    <md-menu-item ng-controller="loginController">
+                        <md-button ng-click="doLogout()">Log out</md-button>
                     </md-menu-item>
                 </md-menu-content>
             </md-menu>
