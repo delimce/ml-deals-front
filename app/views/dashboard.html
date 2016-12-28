@@ -1,53 +1,54 @@
 <div ng-controller="dealsChartController as vm">
 
 
-<div layout-gt-md="row">
-    <div style="width: 80%">
-        <div style="text-align: center">
-            <h2>Successful Items</h2>
+    <div layout-gt-md="row">
+        <div style="width: 80%">
+            <div>
+                <canvas id="chart_si"></canvas>
+            </div>
         </div>
 
-        <div>
-            <canvas id="bar" class="chart chart-bar"
-                    chart-data="si" chart-labels="labels" chart-series="series">
-            </canvas>
+        <div style="width: 80%">
+            <div>
+                <canvas id="chart_gmv"></canvas>
+            </div>
         </div>
+
+
+<!--        <div style="width: 80%">
+            <div style="text-align: center">
+                <h2>GMV</h2>
+            </div>
+
+            <div>
+                <canvas id="chart_gmv" class="chart chart-bar"
+                        chart-data="chart_gmv.data" chart-labels="chart_gmv.labels" chart-series="chart_gmv.series">
+                </canvas>
+            </div>
+        </div>-->
+
+
+
     </div>
 
+    <!--<div layout-gt-md="row">
+        <panel-widget flex title="Site visitors" template="app/views/partials/visitors.html"
+                      class="fixed-height-widget"></panel-widget>
+        <panel-widget flex title="Warnings" template="app/views/partials/warnings.html"
+                      class="fixed-height-widget"></panel-widget>
+        <panel-widget flex title="Memory load" template="app/views/partials/memory.html"
+                      class="fixed-height-widget"></panel-widget>
+    </div>-->
 
-    <div style="width: 80%">
-        <div style="text-align: center">
-            <h2>GMV</h2>
-        </div>
-
-        <div>
-            <canvas id="bar" class="chart chart-bar"
-                    chart-data="gmv" chart-labels="labels" chart-series="series">
-            </canvas>
-        </div>
+    <!--
+    <div layout-gt-md="row">
+      <panel-widget flex title="Server Control Panel" template="app/views/partials/controlPanel.html" class="fixed-height-widget"></panel-widget>
+      <panel-widget flex title="Usage Stats" template="app/views/partials/usage.html" class="fixed-height-widget"></panel-widget>
+      <panel-widget flex title="Autocomplete Input" template="app/views/partials/autocomplete.html" options="true" class="fixed-height-widget"></panel-widget>
     </div>
 
-
-</div>
-
-<!--<div layout-gt-md="row">
-    <panel-widget flex title="Site visitors" template="app/views/partials/visitors.html"
-                  class="fixed-height-widget"></panel-widget>
-    <panel-widget flex title="Warnings" template="app/views/partials/warnings.html"
-                  class="fixed-height-widget"></panel-widget>
-    <panel-widget flex title="Memory load" template="app/views/partials/memory.html"
-                  class="fixed-height-widget"></panel-widget>
-</div>-->
-
-<!--
-<div layout-gt-md="row">
-  <panel-widget flex title="Server Control Panel" template="app/views/partials/controlPanel.html" class="fixed-height-widget"></panel-widget>
-  <panel-widget flex title="Usage Stats" template="app/views/partials/usage.html" class="fixed-height-widget"></panel-widget>
-  <panel-widget flex title="Autocomplete Input" template="app/views/partials/autocomplete.html" options="true" class="fixed-height-widget"></panel-widget>
-</div>
-
-<div layout-gt-md="row">
-  <panel-widget flex title="Performance" template="app/views/partials/performance.html" options="true"></panel-widget>
-  <panel-widget flex title="TODO list" template="app/views/partials/checkboxes.html"></panel-widget>
-</div>
--->
+    <div layout-gt-md="row">
+      <panel-widget flex title="Performance" template="app/views/partials/performance.html" options="true"></panel-widget>
+      <panel-widget flex title="TODO list" template="app/views/partials/checkboxes.html"></panel-widget>
+    </div>
+    -->
