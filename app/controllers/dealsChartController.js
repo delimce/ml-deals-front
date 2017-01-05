@@ -43,7 +43,7 @@
                         datasets: [{
                             label: $scope.chart_si.series,
                             data: $scope.chart_si.data,
-                            backgroundColor: chartsService.getBackgroundColors(),
+                            backgroundColor: chartsService.getChartColors(),
                             borderWidth: 1
                         }]
                     },
@@ -69,7 +69,7 @@
                         datasets: [{
                             label: $scope.chart_gmv.series,
                             data: $scope.chart_gmv.data,
-                            backgroundColor: chartsService.getBackgroundColors(),
+                            backgroundColor: chartsService.getChartColors(),
                             borderWidth: 1
                         }]
                     },
