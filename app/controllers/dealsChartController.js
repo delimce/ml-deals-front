@@ -34,6 +34,7 @@
                 ////SI
 
                 var ctx = $("#chart_si");
+                var total_data = _.size($scope.chart_si.data);
 
                 var chart_si = new Chart(ctx, {
                     type: 'bar',
@@ -43,7 +44,8 @@
                         datasets: [{
                             label: $scope.chart_si.series,
                             data: $scope.chart_si.data,
-                            backgroundColor: chartsService.getChartColors(),
+                            backgroundColor: chartsService.getChartColors(total_data,0.2),
+                            borderColor:chartsService.getChartColors(total_data,1),
                             borderWidth: 1
                         }]
                     },
@@ -61,6 +63,7 @@
 
                 /////GMV
                 var ctx2 = $("#chart_gmv");
+                var total_data = _.size($scope.chart_gmv.data);
                 var chart_gmv = new Chart(ctx2, {
                     type: 'bar',
                     data: {
@@ -69,7 +72,8 @@
                         datasets: [{
                             label: $scope.chart_gmv.series,
                             data: $scope.chart_gmv.data,
-                            backgroundColor: chartsService.getChartColors(),
+                            backgroundColor: chartsService.getChartColors(total_data,0.2),
+                            borderColor:chartsService.getChartColors(total_data,1),
                             borderWidth: 1
                         }]
                     },
