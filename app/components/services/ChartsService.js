@@ -46,6 +46,31 @@
 
                 return colors;
 
+            },
+
+            getQuarterColor: function (quarter, opaque) {
+
+                var color = null;
+                switch (quarter) {
+                    case 1:
+                        color = 'rgba(255, 99, 132, ' + opaque + ')'
+                        break;
+
+                    case 2:
+                        color = 'rgba(54, 162, 235, ' + opaque + ')'
+                        break;
+
+                    case 3:
+                        color = 'rgba(255, 206, 86, ' + opaque + ')'
+                        break;
+
+                    default:
+                        color = 'rgba(153, 102, 255, ' + opaque + ')'
+                }
+
+
+                return color;
+
             }
 
 

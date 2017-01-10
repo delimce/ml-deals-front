@@ -14,6 +14,9 @@
                 var cdata = data.content;
                 $scope.labels = [];
                 $scope.labelsx = [];
+                $scope.backColors = [];
+                $scope.borderColors = [];
+
                 $scope.chart_si.data = [];
                 $scope.chart_gmv.data = [];
                 $scope.chart_si.series = 'Sucessful item';
@@ -24,6 +27,9 @@
 
                     $scope.labels.push(item.name);
                     $scope.labelsx.push(item.name.substring(0, 10));
+
+                    $scope.backColors.push(chartsService.getQuarterColor(item.quarter, 0.2))
+                    $scope.borderColors.push(chartsService.getQuarterColor(item.quarter, 1))
 
                     $scope.chart_si.data.push(item.si);
                     $scope.chart_gmv.data.push(item.gmv);
@@ -40,12 +46,12 @@
                     type: 'bar',
                     data: {
                         labels: $scope.labels,
-                        xLabels:$scope.labelsx,
+                        xLabels: $scope.labelsx,
                         datasets: [{
                             label: $scope.chart_si.series,
                             data: $scope.chart_si.data,
-                            backgroundColor: chartsService.getChartColors(total_data,0.2),
-                            borderColor:chartsService.getChartColors(total_data,1),
+                            backgroundColor: $scope.backColors,
+                            borderColor: $scope.borderColors,
                             borderWidth: 1
                         }]
                     },
@@ -60,7 +66,6 @@
                 });
 
 
-
                 /////GMV
                 var ctx2 = $("#chart_gmv");
                 var total_data = _.size($scope.chart_gmv.data);
@@ -68,12 +73,12 @@
                     type: 'bar',
                     data: {
                         labels: $scope.labels,
-                        xLabels:$scope.labelsx,
+                        xLabels: $scope.labelsx,
                         datasets: [{
                             label: $scope.chart_gmv.series,
                             data: $scope.chart_gmv.data,
-                            backgroundColor: chartsService.getChartColors(total_data,0.2),
-                            borderColor:chartsService.getChartColors(total_data,1),
+                            backgroundColor: $scope.backColors,
+                            borderColor: $scope.borderColors,
                             borderWidth: 1
                         }]
                     },
@@ -90,8 +95,8 @@
                             yAxes: [
                                 {
                                     ticks: {
-                                        callback: function(label, index, labels) {
-                                            return 'Bs.'+label/1000000+'M';
+                                        callback: function (label, index, labels) {
+                                            return 'Bs.' + label / 1000000 + 'M';
                                         }
                                     }
                                 }
@@ -103,15 +108,11 @@
                 });
 
 
-
             }).catch(function (err) { ////FALLA DEL WEBSERVICES
 
                 console.log(err);
 
             });
-
-
-
 
 
         });
