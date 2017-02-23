@@ -13,23 +13,14 @@
                 <canvas id="chart_gmv"></canvas>
             </div>
         </div>
-
-
-<!--        <div style="width: 80%">
-            <div style="text-align: center">
-                <h2>GMV</h2>
-            </div>
-
-            <div>
-                <canvas id="chart_gmv" class="chart chart-bar"
-                        chart-data="chart_gmv.data" chart-labels="chart_gmv.labels" chart-series="chart_gmv.series">
-                </canvas>
-            </div>
-        </div>-->
-
-
-
     </div>
+
+    <div layout-gt-md="row">
+
+        <div id="grid1" ui-grid="{columnDefs:columnDefs,data:sellers}" class="gridStyle"></div>
+    </div>
+
+    <p>&nbsp;</p>
 
     <!--<div layout-gt-md="row">
         <panel-widget flex title="Site visitors" template="app/views/partials/visitors.html"

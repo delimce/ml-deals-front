@@ -71,7 +71,30 @@
 
                 return color;
 
-            }
+            },
+
+
+            getSellersTotals: function (data) {
+
+
+                var temp_data = {
+                    "idGroup": null,
+                    "idPerson": null
+                }
+
+                var options = {
+                    method: 'get',
+                    url: hub + "charts/sellersTotals",
+                    data: temp_data,
+                    timeout: timeOut
+                }
+
+
+                return $http(options).then(function (response) {
+                    return response.data;
+                });
+
+            },
 
 
         };

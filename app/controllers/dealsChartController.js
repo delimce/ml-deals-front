@@ -115,6 +115,28 @@
             });
 
 
+            /**
+             * ejecuta el servicio para sellers
+             */
+            chartsService.getSellersTotals(null).then(function (data2) {
+
+                ////opciones grid de sellers
+                $scope.sellers = data2.content
+                $scope.columnDefs =
+                    [
+                        {field: 'id', width: "20%", type:'string'},
+                        {field: 'name', width: "46%", type:'string', displayName: 'nickname'},
+                        {field: 'si', width: "14%", type:'number'},
+                        {field: 'gmv', width: "20%", type:'number', cellFilter: 'currency'}];
+
+
+            }).catch(function (err) { ////FALLA DEL WEBSERVICES
+
+                console.log(err);
+
+            });
+
+
         });
 
 
