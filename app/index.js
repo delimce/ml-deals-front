@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('angularMaterialAdmin', ['ngAnimate', 'ngCookies', 'ngTouch',
-    'ngSanitize', 'ui.router', 'ngMaterial', 'nvd3', 'app', 'angularChart', 'chart.js','ngStorage','ui.grid'])
+    'ngSanitize', 'ui.router', 'ngMaterial', 'nvd3', 'app', 'angularChart', 'chart.js', 'ngStorage', 'ui.grid'])
 
     .config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider,
                       $mdIconProvider) {
@@ -88,3 +88,24 @@ angular.module('angularMaterialAdmin', ['ngAnimate', 'ngCookies', 'ngTouch',
 
         $mdIconProvider.icon('user', 'assets/images/user.svg', 64);
     });
+
+
+window.globalVariable = {
+
+    message: {
+        errorMessage: "Technical error please try again later.", //Default error message.
+        errorMessageOnLine: "Upss, hay un error chequea tu conexión", //conection error message.
+        errorMessageServices: "Falla al acceder al servicio", //services error message.
+
+    },
+    oAuth: {
+        dropbox: "your_api_key",//Use for Dropbox API clientID.
+        facebook: "your_api_key",//Use for Facebook API appID.
+        foursquare: "your_api_key", //Use for Foursquare API clientID.
+        instagram: "your_api_key",//Use for Instagram API clientID.
+        googlePlus: "your_api_key",//Use for Google API clientID.
+    },
+    appVersion: "0.60 (Testing)",
+    servicesPath: "http://xserver/dealsWS/"
+
+};// End Global variable

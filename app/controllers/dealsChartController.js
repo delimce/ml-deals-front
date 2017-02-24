@@ -1,7 +1,7 @@
 (function () {
     angular
         .module('app')
-        .controller('dealsChartController', function ($scope, chartsService) {
+        .controller('dealsChartController', function ($scope, chartsService, dealService) {
 
 
             $scope.chart_si = {}
@@ -124,10 +124,33 @@
                 $scope.sellers = data2.content
                 $scope.columnDefs =
                     [
-                        {field: 'id', width: "20%", type:'string'},
-                        {field: 'name', width: "46%", type:'string', displayName: 'nickname'},
-                        {field: 'si', width: "14%", type:'number'},
-                        {field: 'gmv', width: "20%", type:'number', cellFilter: 'currency'}];
+                        {field: 'id', width: "20%", type: 'string'},
+                        {field: 'name', width: "46%", type: 'string', displayName: 'nickname'},
+                        {field: 'si', width: "14%", type: 'number'},
+                        {field: 'gmv', width: "20%", type: 'number', cellFilter: 'currency'}];
+
+
+            }).catch(function (err) { ////FALLA DEL WEBSERVICES
+
+                console.log(err);
+
+            });
+
+
+            /**
+             * lista de deals
+             */
+            dealService.getDealList(null).then(function (data) {
+
+                $scope.dealsList = []
+
+                _.each(data.content, function (deal) {
+
+                    deal.check = (deal.active == 1);
+
+                    $scope.dealsList.push(deal);
+
+                })
 
 
             }).catch(function (err) { ////FALLA DEL WEBSERVICES

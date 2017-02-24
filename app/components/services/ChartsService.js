@@ -5,7 +5,7 @@
 
 
         var timeOut = 10000; //// (10) seg
-        var hub = "http://xserver/dealsWS/";
+        var hub = window.globalVariable.servicesPath;
 
         return {
 

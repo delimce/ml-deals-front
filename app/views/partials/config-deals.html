@@ -1,0 +1,19 @@
+<div style="padding-left: 20px">
+    <md-input-container>
+        <label>Año:</label>
+        <md-select ng-model="dealYear">
+            <md-option ng-value="opt" ng-repeat="opt in [2016,2017]">{{ opt }}</md-option>
+        </md-select>
+    </md-input-container>
+
+
+    <md-content class="messages-content" ng-controller="dealsChartController">
+
+        <md-switch ng-model="deal.check"  aria-label="Finished?" ng-repeat="deal in dealsList" style="font-size: 11px">
+            {{deal.name}}
+        </md-switch>
+
+
+    </md-content>
+
+</div>
