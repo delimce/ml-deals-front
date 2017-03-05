@@ -51,7 +51,7 @@
             getQuarterColor: function (quarter, opaque) {
 
                 var color = null;
-                switch (quarter) {
+                switch (Number(quarter)) {
                     case 1:
                         color = 'rgba(255, 99, 132, ' + opaque + ')'
                         break;
