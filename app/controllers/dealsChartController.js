@@ -8,6 +8,25 @@
             $scope.chart_gmv = {}
 
 
+            $scope.setDealStatus = function (id,active) {
+
+                var status = (active)?1:0;
+
+                dealService.setDealActive(id,status).then(function (data) {
+
+                    console.log(data);
+
+                }).catch(function (err) { ////FALLA DEL WEBSERVICES
+
+                    console.log(err);
+
+                });
+
+
+
+            }
+
+
             chartsService.getDataTotals(null).then(function (data) {
 
 

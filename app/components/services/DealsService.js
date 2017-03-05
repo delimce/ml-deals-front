@@ -33,6 +33,23 @@
             },
 
 
+            setDealActive:function (deal,active) {
+
+                var options = {
+                    method: 'get',
+                    url: hub + "deal/"+deal+"/status/"+active,
+                    timeout: timeOut
+                }
+
+
+                return $http(options).then(function (response) {
+                    return response.data;
+                });
+
+            }
+
+
+
         };
     });
 

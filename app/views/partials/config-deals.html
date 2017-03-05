@@ -7,9 +7,9 @@
     </md-input-container>
 
 
-    <md-content class="messages-content" ng-controller="dealsChartController">
+    <md-content class="messages-content"  ng-controller="dealsChartController">
 
-        <md-switch ng-model="deal.check"  aria-label="Finished?" ng-repeat="deal in dealsList" style="font-size: 11px">
+        <md-switch ng-model="deal.check" ng-change="setDealStatus(deal.id,deal.check)"  aria-label="Finished?" ng-repeat="deal in dealsList" style="font-size: 11px">
             {{deal.name}}
         </md-switch>
 
