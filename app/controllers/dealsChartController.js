@@ -4,8 +4,6 @@
         .controller('dealsChartController', function ($scope, chartsService, dealService, $timeout, $mdDialog) {
 
 
-
-
             $scope.load = function () {
 
                 $mdDialog.show({
@@ -20,7 +18,7 @@
                     fullscreen: false,
                     escapeToClose: false
                 });
-                $timeout(function() {
+                $timeout(function () {
                     $mdDialog.cancel();
                 }, 1000);
 
@@ -32,11 +30,11 @@
             $scope.chart_gmv = {}
 
 
-            $scope.setDealStatus = function (id,active) {
+            $scope.setDealStatus = function (id, active) {
 
-                var status = (active)?1:0;
+                var status = (active) ? 1 : 0;
 
-                dealService.setDealActive(id,status).then(function (data) {
+                dealService.setDealActive(id, status).then(function (data) {
 
                     console.log(data);
 
@@ -45,7 +43,6 @@
                     console.log(err);
 
                 });
-
 
 
             }
@@ -167,10 +164,10 @@
                 $scope.sellers = data2.content
                 $scope.columnDefs =
                     [
-                        {field: 'id', width: "20%", type: 'string'},
+                        {field: 'id', width: "17%", type: 'string'},
                         {field: 'name', width: "46%", type: 'string', displayName: 'nickname'},
                         {field: 'si', width: "14%", type: 'number'},
-                        {field: 'gmv', width: "20%", type: 'number', cellFilter: 'currency'}];
+                        {field: 'gmv', width: "22%", type: 'number', cellFilter: 'currencyFilter:this'}];
 
 
             }).catch(function (err) { ////FALLA DEL WEBSERVICES
@@ -203,7 +200,19 @@
             });
 
 
-        });
+        })
+
+
+        .filter('currencyFilter', function () {
+
+            return function (value) {
+
+                var val = Number(value);
+               var num = val.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+                // var num = val.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+                return 'Bs. ' + String(num)
+            };
+        })
 
 
 })();
