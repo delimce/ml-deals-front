@@ -3,11 +3,11 @@
   angular
        .module('app')
        .controller('MainController', [
-          'navService', '$mdSidenav', '$mdBottomSheet', '$log', '$q', '$state', '$mdToast',
+          'navService','$scope', '$mdSidenav', '$mdBottomSheet', '$log', '$q', '$state', '$mdToast',
           MainController
        ]);
 
-  function MainController(navService, $mdSidenav, $mdBottomSheet, $log, $q, $state, $mdToast) {
+  function MainController(navService, $scope, $mdSidenav, $mdBottomSheet, $log, $q, $state, $mdToast) {
     var vm = this;
 
     vm.menuItems = [ ];
@@ -76,6 +76,13 @@
           .position('bottom right')
       );
     }
+
+
+    $scope.doRefresh = function () {
+        $state.reload();
+    }
+
+
   }
 
 })();

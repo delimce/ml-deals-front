@@ -1,7 +1,31 @@
 (function () {
     angular
         .module('app')
-        .controller('dealsChartController', function ($scope, chartsService, dealService) {
+        .controller('dealsChartController', function ($scope, chartsService, dealService, $timeout, $mdDialog) {
+
+
+
+
+            $scope.load = function () {
+
+                $mdDialog.show({
+                    template: '<md-dialog id="plz_wait" style="box-shadow:none">' +
+                    '<md-dialog-content layout="row" layout-margin layout-padding layout-align="center center" aria-label="wait">' +
+                    '<md-progress-circular md-mode="indeterminate" md-diameter="50"></md-progress-circular>' +
+                    'Loading...' +
+                    '</md-dialog-content>' +
+                    '</md-dialog>',
+                    parent: angular.element(document.body),
+                    clickOutsideToClose: false,
+                    fullscreen: false,
+                    escapeToClose: false
+                });
+                $timeout(function() {
+                    $mdDialog.cancel();
+                }, 1000);
+
+
+            }
 
 
             $scope.chart_si = {}
