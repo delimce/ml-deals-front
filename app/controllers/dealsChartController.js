@@ -1,7 +1,7 @@
 (function () {
     angular
         .module('app')
-        .controller('dealsChartController', function ($scope, chartsService, dealService, $timeout, $mdDialog) {
+        .controller('dealsChartController', function ($scope, $rootScope, chartsService, dealService, $timeout, $mdDialog) {
 
 
             $scope.load = function () {
@@ -97,6 +97,20 @@
                     },
 
                     options: {
+
+                        tooltips: {
+                            callbacks: {
+                                label: function (tooltipItem, data) {
+
+                                    return tooltipItem.yLabel;
+                                },
+                                title: function (tooltipItem, data) {
+                                    return data.labels[tooltipItem[0].index];
+                                }
+                            }
+                        },
+
+
                         title: {
                             display: true,
                             text: 'SuccessFul Items'
@@ -124,6 +138,20 @@
                     },
 
                     options: {
+
+                        tooltips: {
+                            callbacks: {
+                                label: function (tooltipItem, data) {
+
+                                    var number = numeral(tooltipItem.yLabel);
+
+                                    return 'Bs. ' + number.format();
+                                },
+                                title: function (tooltipItem, data) {
+                                    return data.labels[tooltipItem[0].index];
+                                }
+                            }
+                        },
 
                         title: {
                             display: true,
@@ -208,7 +236,7 @@
             return function (value) {
 
                 var val = Number(value);
-               var num = val.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+                var num = val.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
                 // var num = val.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
                 return 'Bs. ' + String(num)
             };

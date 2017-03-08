@@ -19,7 +19,8 @@
     "angular-chart.js": "^1.1.1",
     "underscore": "^1.8.3",
     "ngstorage": "^0.3.11",
-    "angular-ui-grid": "ui-grid#^4.0.2"
+    "angular-ui-grid": "ui-grid#^4.0.2",
+    "numeral": "numeraljs#^2.0.4"
   },
   "devDependencies": {}
 }
