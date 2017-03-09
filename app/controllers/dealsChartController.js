@@ -20,7 +20,7 @@
                 });
                 $timeout(function () {
                     $mdDialog.cancel();
-                }, 1000);
+                }, 1300);
 
 
             }
