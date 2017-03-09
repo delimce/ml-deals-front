@@ -192,10 +192,11 @@
                 $scope.sellers = data2.content
                 $scope.columnDefs =
                     [
-                        {field: 'id', width: "17%", type: 'string'},
-                        {field: 'name', width: "46%", type: 'string', displayName: 'nickname'},
-                        {field: 'si', width: "14%", type: 'number'},
-                        {field: 'gmv', width: "22%", type: 'number', cellFilter: 'currencyFilter:this'}];
+                        {field: 'id', width: "10%", type: 'string'},
+                        {field: 'name', width: "40%", type: 'string', displayName: 'nickname'},
+                        {field: 'si', width: "10%", type: 'number'},
+                        {field: 'gmv', width: "20%", type: 'number', cellFilter: 'currencyFilter:this'},
+                        {field: 'asp', width: "20%", type: 'number', cellFilter: 'currencyFilter:this'}];
 
 
             }).catch(function (err) { ////FALLA DEL WEBSERVICES
